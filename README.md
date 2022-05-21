@@ -24,4 +24,4 @@ spark-submit --master spark://spark-master:7077 --deploy-mode client spark_video
 exit
 ````
 ### Results
-Each result file from <i>source_file.csv</i> has name: <b>source_file-N.json</b>, where <i>N<i/> is query number.
+Each result file from <i>source_file.csv</i> has name: <b>source_file-N.json</b>, where <i>N</i> is query number.
