@@ -1,7 +1,6 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import desc
 from pyspark.sql import functions as fn
-from pyspark.sql.types import DateType
 
 import datetime
 import json
@@ -197,10 +196,10 @@ class SparkApp:
                 "total_views": int(row.total_views),
                 "videos_views": []
             }
-            channel_desc["start_date"] = self.date_to_str(df.filter(df.channel_title == channel_desc["channel_name"]) \
+            channel_desc["start_date"] = self.date_to_str(df.filter(df.channel_title == channel_desc["channel_name"]) 
                                                           .agg(fn.min('trending_date').alias('start_date')).collect()[
                                                               0].start_date)
-            channel_desc["end_date"] = self.date_to_str(df.filter(df.channel_title == channel_desc["channel_name"]) \
+            channel_desc["end_date"] = self.date_to_str(df.filter(df.channel_title == channel_desc["channel_name"]) 
                                                         .agg(fn.max('trending_date').alias('end_date')).collect()[
                                                             0].end_date)
             df_channel_videos = df_last_video.filter(df_last_video.channel_title == channel_desc["channel_name"])
