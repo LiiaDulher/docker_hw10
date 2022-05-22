@@ -25,3 +25,5 @@ exit
 ````
 ### Results
 Each result file from <i>source_file.csv</i> has name: <b>source_file-N.json</b>, where <i>N</i> is query number.
+
+My results are in videos_results.zip. There are one file for each query with different source files.
